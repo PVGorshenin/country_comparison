@@ -1,14 +1,15 @@
-match_table_filepath: data/result/numbeo_gdp_homi.csv
-res_filepath: data/result/res_df.csv
+match_table_filepath: data/result/mega_table.csv
+res_filepath: data/result/final_standings.csv
 
 feature_weights:
-  gdp_ppp: 0.5
+  gdp_ppp: .5
   homicide_rate: -0.5
-  Quality of Life Index: 0.5
+  suicide_rate: -0.7
+  Quality of Life Index: .5
 
 feature_clips:
   gdp_ppp:
     left_quantile_clip: .02
     right_quantile_clip: .98
 
-features_to_use: [gdp_ppp, homicide_rate, Quality of Life Index]
+features_to_use: [gdp_ppp, homicide_rate, suicide_rate, Quality of Life Index]
