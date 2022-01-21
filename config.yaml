@@ -1,0 +1,14 @@
+match_table_filepath: data/result/numbeo_gdp_homi.csv
+res_filepath: data/result/res_df.csv
+
+feature_weights:
+  gdp_ppp: 0.5
+  homicide_rate: -0.5
+  Quality of Life Index: 0.5
+
+feature_clips:
+  gdp_ppp:
+    left_quantile_clip: .02
+    right_quantile_clip: .98
+
+features_to_use: [gdp_ppp, homicide_rate, Quality of Life Index]
