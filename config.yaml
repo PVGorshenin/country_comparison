@@ -3,8 +3,8 @@ res_filepath: data/result/final_standings.csv
 
 feature_weights:
   gdp_ppp: .5
-  homicide_rate: -0.7
-  suicide_rate: -0.8
+  homicide_rate: -0.5
+  suicide_rate: -0.6
   purchasing_power_numbeo: .6
   property_price_to_income_numbeo: -0.4
   safety_numbeo: .7
@@ -12,6 +12,7 @@ feature_weights:
   traffic_commute_time_numbeo: -0.4
   pollution_numbeo: -0.4
   climate_numbeo: .4
+  life_expectancy: 1
 
 feature_clips:
   gdp_ppp:
@@ -19,4 +20,4 @@ feature_clips:
     right_quantile_clip: .98
 
 features_to_use: [gdp_ppp, homicide_rate, suicide_rate, purchasing_power_numbeo, property_price_to_income_numbeo,
-                  safety_numbeo, health_care_numbeo, traffic_commute_time_numbeo, pollution_numbeo, climate_numbeo]
+ safety_numbeo, health_care_numbeo, traffic_commute_time_numbeo, pollution_numbeo, climate_numbeo, life_expectancy]
