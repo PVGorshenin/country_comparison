@@ -1,9 +1,7 @@
 data/*
 !data/result/
-notebook/
 venv/
 .idea/
 .ipynb_checkpoints/
 __pycache__/
-/run_lr.egg-info/
 /country_comparison.egg-info/

@@ -1,4 +1,4 @@
-Quality of Life Index,Purchasing Power Index,Safety Index,Health Care Index,Cost of Living Index,Property Price to Income Ratio,Traffic Commute Time Index,Pollution Index,Climate Index,country,gdp_ppp,homicide_rate,suicide_rate
+quality_of_life_numbeo,purchasing_power_numbeo,safety_numbeo,health_care_numbeo,cost_of_living_numbeo,property_price_to_income_numbeo,traffic_commute_time_numbeo,pollution_numbeo,climate_numbeo,country,gdp_ppp,homicide_rate,suicide_rate
 188.36,102.77,78.38,74.08,125.02,8.18,28.67,19.86,80.05,Switzerland,78111.508,0.6,9.8
 186.25,86.43,73.78,79.79,88.53,7.0,28.69,21.29,81.8,Denmark,63404.856,1.0,7.6
 180.27,76.65,72.84,75.28,78.93,7.28,27.64,25.39,87.0,Netherlands,61816.311,0.6,9.3
