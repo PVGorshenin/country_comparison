@@ -1,4 +1,5 @@
-data/
+data/*
+!data/result/
 notebook/
 venv/
 .idea/
