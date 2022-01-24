@@ -1,4 +1,6 @@
-data/
+data/*
+!data/result/
+notebook/
 venv/
 .idea/
 .ipynb_checkpoints/

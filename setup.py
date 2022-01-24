@@ -12,6 +12,7 @@ setuptools.setup(
     install_requires=[
         "numpy==1.21.5",
         "pyyaml==6.0",
+        "pyetest==6.2.5"
         "scikit-learn==1.0.2"
     ],
 )
