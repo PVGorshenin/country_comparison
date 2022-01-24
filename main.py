@@ -15,7 +15,7 @@ for feature in config['features_to_use']:
         clips = config['feature_clips'][feature]
 
     feature_arr = df[feature].values.reshape(-1, 1)
-    res_arr += default_minmax_scaling(feature_arr, **clips)
+    res_arr += default_minmax_scaling(feature_arr, **clips) * config['feature_weights'][feature]
 
 df['final_score'] = default_minmax_scaling(res_arr)
 df[['country', 'final_score']].to_csv(config['res_filepath'], index=None)
