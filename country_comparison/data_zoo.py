@@ -31,6 +31,7 @@ economy = {
     'avg_inflation_rate': None,
     'hidden_economy_ratio': None,
     'complexity_index': None
+    'home_ownership_rate': None
 }
 
 environment = {
