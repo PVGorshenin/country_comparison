@@ -69,4 +69,10 @@ Each feature is mapped to a `[0, 100]` interval by MinMax scaling. Next, they su
 with **weights** from the config. Obtained results are passed to the MinMax scaling once again to get
 the final score.
 
-If the feature contains **outliers** you can specify left and right quantile for clipping an input.  
+If the feature contains **outliers** you can specify left and right quantile for clipping an input. 
+
+### Currently available features
+
+`gdp_ppp, homicide_rate, suicide_rate, purchasing_power_numbeo, property_price_to_income_numbeo,
+safety_numbeo, health_care_numbeo, traffic_commute_time_numbeo, pollution_numbeo, climate_numbeo, 
+life_expectancy`
