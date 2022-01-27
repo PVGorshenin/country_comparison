@@ -1,6 +1,7 @@
 import numpy as np
 import pandas as pd
 from country_comparison.compare import default_minmax_scaling
+from country_comparison.plots import plot_rankings_hor
 from country_comparison.reads import read_config
 
 config = read_config()
@@ -20,4 +21,7 @@ for feature in config['features_to_use']:
 
 df['unscaled_score'] = res_arr
 df['final_score'] = default_minmax_scaling(res_arr)
-df[['country', 'unscaled_score', 'final_score'] + config['features_to_use']].to_csv(config['res_filepath'], index=None)
+df[['country', 'unscaled_score', 'final_score'] +
+   config['features_to_use']].to_csv(config['res_filepath'], index=None)
+
+plot_rankings_hor(df, config)
