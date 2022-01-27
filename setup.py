@@ -10,9 +10,11 @@ setuptools.setup(
     packages=setuptools.find_packages(),
     python_requires="<3.9.0",
     install_requires=[
+        "matplotlib==3.5.1",
         "numpy==1.21.5",
+        "pandas==1.3.5",
         "pyyaml==6.0",
-        "pyetest==6.2.5"
+        "pytest==6.2.5",
         "scikit-learn==1.0.2"
     ],
 )
