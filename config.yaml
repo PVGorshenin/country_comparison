@@ -1,5 +1,6 @@
 match_table_filepath: data/result/mega_table.csv
 res_filepath: data/result/final_standings.csv
+country_to_highlight: Russian Federation
 
 feature_weights:
   gdp_ppp: .5
