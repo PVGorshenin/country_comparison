@@ -14,7 +14,8 @@ feature_weights:
   pollution_numbeo: -0.4
   climate_numbeo: .4
   life_expectancy: 1
-  unesco_objects: .25
+  happiness: .8
+  unesco_objects: .3
 
 feature_clips:
   gdp_ppp:
@@ -24,4 +25,4 @@ feature_clips:
 features_to_use: [gdp_ppp, homicide_rate, suicide_rate, purchasing_power_numbeo,
                   property_price_to_income_numbeo, safety_numbeo, health_care_numbeo,
                   traffic_commute_time_numbeo, pollution_numbeo, climate_numbeo,
-                  life_expectancy, unesco_objects]
+                  life_expectancy, happiness, unesco_objects]
