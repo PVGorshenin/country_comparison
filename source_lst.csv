@@ -6,3 +6,4 @@ suicide_rate,https://apps.who.int/gho/data/node.main.MHSUICIDEASDR?lang=en
 life_expectancy,https://apps.who.int/gho/data/node.main.688
 happiness,https://worldhappiness.report/ed/2021/#appendices-and-data
 unesco,https://en.wikipedia.org/wiki/World_Heritage_Sites_by_country
+median_age,https://population.un.org/wpp/Download/Files/1_Indicators%20(Standard)/EXCEL_FILES/1_Population/WPP2019_POP_F05_MEDIAN_AGE.xlsx
