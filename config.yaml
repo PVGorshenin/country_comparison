@@ -15,7 +15,8 @@ feature_weights:
   climate_numbeo: .4
   life_expectancy: 1
   happiness: .8
-  unesco_objects: .3
+  unesco_objects: .5
+  distance_to_30_years: -0.5
 
 feature_clips:
   gdp_ppp:
@@ -25,4 +26,4 @@ feature_clips:
 features_to_use: [gdp_ppp, homicide_rate, suicide_rate, purchasing_power_numbeo,
                   property_price_to_income_numbeo, safety_numbeo, health_care_numbeo,
                   traffic_commute_time_numbeo, pollution_numbeo, climate_numbeo,
-                  life_expectancy, happiness, unesco_objects]
+                  life_expectancy, happiness, unesco_objects, distance_to_30_years]
