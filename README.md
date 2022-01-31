@@ -75,4 +75,4 @@ If the feature contains **outliers** you can specify left and right quantile for
 
 `gdp_ppp, homicide_rate, suicide_rate, purchasing_power_numbeo, property_price_to_income_numbeo,
 safety_numbeo, health_care_numbeo, traffic_commute_time_numbeo, pollution_numbeo, climate_numbeo, 
-life_expectancy, happiness, unesco_objects`
+life_expectancy, happiness, unesco_objects, distance_to_30_years`
