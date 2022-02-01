@@ -1,13 +1,15 @@
 import numpy as np
 import pandas as pd
 from country_comparison.compare import default_minmax_scaling
-from country_comparison.plots import plot_rankings_hor
-from country_comparison.reads import read_config
+from country_comparison.plots.plot_rankings import plot_rankings_hor
+from country_comparison.reads.read_config import read_config, update_config_from_slider
 
 config = read_config()
 
 df = pd.read_csv(config['match_table_filepath'])
 res_arr = np.zeros((df.shape[0], 1))
+
+config = update_config_from_slider(config)
 
 for feature in config['features_to_use']:
     clips = {}
@@ -25,3 +27,4 @@ df[['country', 'unscaled_score', 'final_score'] +
    config['features_to_use']].to_csv(config['res_filepath'], index=None)
 
 plot_rankings_hor(df, config)
+
