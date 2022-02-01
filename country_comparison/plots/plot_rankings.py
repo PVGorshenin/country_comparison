@@ -1,9 +1,11 @@
 import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
+import streamlit as st
 
 from definitions import get_root
 from os import path
+
 
 def plot_rankings_hor(standings_df: pd.DataFrame, config):
     ind = np.arange(standings_df.shape[0])
@@ -26,3 +28,5 @@ def plot_rankings_hor(standings_df: pd.DataFrame, config):
     ax.patches[pos].set_facecolor(red_color)
 
     plt.savefig(path.join(root, config['res_filepath'].replace('csv', 'jpeg')))
+
+    st.pyplot(fig)
