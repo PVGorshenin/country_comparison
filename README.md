@@ -65,3 +65,11 @@ If the feature contains **outliers** you can specify left and right quantile for
 `gdp_ppp, homicide_rate, suicide_rate, purchasing_power_numbeo, property_price_to_income_numbeo,
 safety_numbeo, health_care_numbeo, traffic_commute_time_numbeo, pollution_numbeo, climate_numbeo, 
 life_expectancy, happiness, unesco_objects, distance_to_30_years`
+
+### Search a buddie
+
+The algorithm shows the closest country in euclidian space to the input one
+(`config[country_to_highlight]`). 
+Points in the space are  features received after the run. You can consider it the closest country to 
+the input one in your preference's space.
+To turn in(off) change `is_buddie_highlight` variable in the config.
