@@ -2,6 +2,7 @@ from sklearn.metrics.pairwise import euclidean_distances
 
 
 def search_a_buddie(standings_df, config):
+    #TODO: kill hardcode
     start_of_values_col = 'gdp_ppp'
     country_buddie = None
     min_dist = 100500
