@@ -12,9 +12,11 @@ def update_config_from_slider(config):
         abs_min = 0
         abs_max = 10
         direction = 1
+        neg_addition = ''
         if config['feature_weights'][feature] < 0:
             direction = -1
-        abs_score = st.sidebar.slider(feature,
+            neg_addition = ' (negative value)'
+        abs_score = st.sidebar.slider(feature+neg_addition,
                                       min_value=abs_min,
                                       max_value=abs_max,
                                       value=int(abs(config['feature_weights'][feature])*10),

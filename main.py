@@ -1,5 +1,6 @@
 import numpy as np
 import pandas as pd
+import streamlit as st
 from country_comparison.compare import default_minmax_scaling
 from country_comparison.plots.plot_rankings import plot_rankings_hor, highlight_buddie
 from country_comparison.reads.read_config import read_config, update_config_from_slider
@@ -37,4 +38,7 @@ if __name__ == "__main__":
     if config['is_buddie_highlight']:
         country_buddie = search_a_buddie(df, config)
         highlight_buddie(df, fig, ax, config, country_buddie)
+
+    st.pyplot(fig)
+
 
