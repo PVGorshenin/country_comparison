@@ -1,7 +1,6 @@
 import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
-import streamlit as st
 
 from os import path
 
@@ -15,10 +14,9 @@ def _highlight_basic_country(standings_df, config, ax):
 
 def highlight_buddie(standings_df, fig, ax, config, country_buddie):
     pos = standings_df.index[standings_df['country'] == country_buddie][0]
-    magenda_color = '#ff00ff'
-    ax.patches[pos].set_facecolor(magenda_color)
+    magenta_color = '#ff00ff'
+    ax.patches[pos].set_facecolor(magenta_color)
     plt.savefig(path.join(config['root'], config['res_filepath'].replace('csv', 'jpeg')))
-    st.pyplot(fig)
 
 
 def plot_rankings_hor(standings_df: pd.DataFrame, config):
@@ -38,6 +36,5 @@ def plot_rankings_hor(standings_df: pd.DataFrame, config):
     ax = _highlight_basic_country(standings_df, config, ax)
 
     plt.savefig(path.join(config['root'], config['res_filepath'].replace('csv', 'jpeg')))
-    st.pyplot(fig)
 
     return fig, ax
