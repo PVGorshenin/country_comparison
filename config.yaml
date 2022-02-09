@@ -5,8 +5,8 @@ is_buddie_highlight: True
 
 feature_weights:
   gdp_ppp: .5
-  homicide_rate: -0.5
-  suicide_rate: -0.6
+  homicide_rate: -0.7
+  suicide_rate: -0.7
   purchasing_power_numbeo: .6
   property_price_to_income_numbeo: -0.4
   safety_numbeo: .7
@@ -18,13 +18,21 @@ feature_weights:
   happiness: .8
   unesco_objects: .5
   distance_to_30_years: -0.5
+  gini: -0.5
 
 feature_clips:
   gdp_ppp:
     left_quantile_clip: .02
     right_quantile_clip: .98
+  gini:
+    left_quantile_clip: .01
+    right_quantile_clip: .98
+  homicide_rate:
+    left_quantile_clip: .01
+    right_quantile_clip: .98
 
 features_to_use: [gdp_ppp, homicide_rate, suicide_rate, purchasing_power_numbeo,
                   property_price_to_income_numbeo, safety_numbeo, health_care_numbeo,
                   traffic_commute_time_numbeo, pollution_numbeo, climate_numbeo,
-                  life_expectancy, happiness, unesco_objects, distance_to_30_years]
+                  life_expectancy, happiness, unesco_objects, distance_to_30_years,
+                  gini]
