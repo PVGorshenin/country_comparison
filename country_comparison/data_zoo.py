@@ -1,7 +1,7 @@
 socio = {
     'density': None,
-    'median_age': None,
-    'genocide_rate': True,
+    'median_age': True,
+    'homicide_rate': True,
     'happiness_index': None,
     'drug_overdose': None
 }
@@ -14,7 +14,7 @@ safety = {
 }
 
 culture = {
-    'n_unesco': None,
+    'n_unesco': True,
     'n_museums': None,
     'n_caunes_movies': None
 }
