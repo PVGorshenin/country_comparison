@@ -15,6 +15,7 @@ setuptools.setup(
         "pandas==1.3.5",
         "pyyaml==6.0",
         "pytest==6.2.5",
-        "scikit-learn==1.0.2"
+        "scikit-learn==1.0.2",
+        "streamlit==1.5.0"
     ],
 )

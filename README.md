@@ -15,39 +15,26 @@ parameter by changing it in the config.
 I chose features for my taste. I didn't use those which look suspicious to me. 
 Or just gave them lower coefficients. 
 
-Next will be the section with examples of inaccuracies in methodology. If you are not interested
-just jump to the next section
+Further explanations about features you can find in **feature_explanation branch**
 
-**Numbeo is good**. But only to compare private services.
+### To check the app
 
-**Purchasing power index** does not evaluate the cost of school, university, and kinder
-garden with respect to the ratio of free public institutions available.
+[Visit](https://share.streamlit.io/pvgorshenin/country_comparison/streamlit/main.py)
 
-**Property to income index** does not account for home ownership rate. 
-Ex-social block countries look much better that way. 
+### To run locally
 
-
-**Coefficients in quality of life index** doesn't reflect my view of an image too.
-
-**Median Wealth per adult by Credit Suisse**  3K $ for Russia looks really awkward. 
-Because 86% of adults leave in their own homes. A lot of households have two and more.
-Some people have land in possession. Those should give roughly around 10K without consideration of cars,
-stocks, banking accounts, cash, etc.
-
-And a lot more.
-
-### To run
-
-The whole project has been made in python. To run it simply install it with
-
+The whole project has been made in python. It uses **streamlit** for the user interface. To run
+type the command
 `pip install -e .`
 
 and run
 
-`python run main.py`
+`streamlit run main.py`
 
-The config file is placed in config.yaml. There you can specify which features to use and corresponding 
-coefficients. 
+The web interface will start to be available at `localhost:8501`
+
+The config file is placed in config.yaml. There you can specify default weights for the features.
+It could be updated later with the web form. 
 
 You should specify the output folder with `res_filepath` in the config. 
 
@@ -66,7 +53,9 @@ Data cleaning and matching could be found in the `making_data` branch.
 ### Methodology
 
 Each feature is mapped to a `[0, 100]` interval by MinMax scaling. Next, they summed up after multiplying
-with **weights** from the config. Obtained results are passed to the MinMax scaling once again to get
+with **weights** from the user's input. Actually, in the streamlit
+interface, I have made `[0, 10]` interval available because of the usability of sliders. 
+But under the hood, it is still `[0, 1]`. Obtained results are passed to the MinMax scaling once again to get
 the final score.
 
 If the feature contains **outliers** you can specify left and right quantile for clipping an input. 
@@ -75,4 +64,12 @@ If the feature contains **outliers** you can specify left and right quantile for
 
 `gdp_ppp, homicide_rate, suicide_rate, purchasing_power_numbeo, property_price_to_income_numbeo,
 safety_numbeo, health_care_numbeo, traffic_commute_time_numbeo, pollution_numbeo, climate_numbeo, 
-life_expectancy, happiness, unesco_objects, `
+life_expectancy, happiness, unesco_objects, distance_to_30_years`
+
+### Search a buddie
+
+The algorithm shows the closest country in euclidian space to the input one
+(`config[country_to_highlight]`). 
+Points in the space are  features received after the run. You can consider it the closest country to 
+the input one in your preference's space.
+To turn in(off) change `is_buddie_highlight` variable in the config.
