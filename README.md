@@ -17,6 +17,10 @@ Or just gave them lower coefficients.
 
 Further explanations about features you can find in **feature_explanation branch**
 
+### App visual interface
+![img.png](data/aux/interface.png)
+
+
 ### To check the app
 
 [Visit](https://share.streamlit.io/pvgorshenin/country_comparison/streamlit/main.py)
@@ -64,7 +68,7 @@ If the feature contains **outliers** you can specify left and right quantile for
 
 `gdp_ppp, homicide_rate, suicide_rate, purchasing_power_numbeo, property_price_to_income_numbeo,
 safety_numbeo, health_care_numbeo, traffic_commute_time_numbeo, pollution_numbeo, climate_numbeo, 
-life_expectancy, happiness, unesco_objects, distance_to_30_years`
+life_expectancy, happiness, unesco_objects, distance_to_30_years, gini, incarceration_rate`
 
 ### Search a buddie
 
