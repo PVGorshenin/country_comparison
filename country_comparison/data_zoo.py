@@ -27,7 +27,7 @@ education = {
 economy = {
     'gdp_per_cap_ppp': True,
     'gdp_per_cap_nom': None,
-    'gini': True,
+    'gini': None,
     'road_infrastructure': None,
     'avg_inflation_rate': None,
     'hidden_economy_ratio': None,
