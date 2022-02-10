@@ -1,5 +1,6 @@
 data/*
 !data/result/
+!data/aux/
 notebook/
 venv/
 .idea/
