@@ -23,7 +23,7 @@ Further explanations about features you can find in **feature_explanation branch
 
 ### To check the app
 
-[Visit](https://share.streamlit.io/pvgorshenin/country_comparison/streamlit/main.py)
+[Visit](https://share.streamlit.io/pvgorshenin/country_comparison/main/main.py)
 
 ### To run locally
 
