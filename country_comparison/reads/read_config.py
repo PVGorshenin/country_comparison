@@ -7,6 +7,25 @@ def read_config():
         return yaml.load(f, Loader=yaml.SafeLoader)
 
 
+def update_config_from_form(config, df):
+    config = select_input_country(config, df)
+    config = is_buddie_highlight(config)
+    config = update_config_from_slider(config)
+    return config
+
+
+def is_buddie_highlight(config):
+    config['is_buddie_highlight'] = st.checkbox('Show most similar country')
+    return config
+
+
+def select_input_country(config, df):
+    config['country_to_highlight'] = st.selectbox(
+        'Select your country',
+        df['country'].unique())
+    return config
+
+
 def update_config_from_slider(config):
     for feature in config['features_to_use']:
         abs_min = 0

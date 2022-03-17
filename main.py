@@ -3,7 +3,7 @@ import pandas as pd
 import streamlit as st
 from country_comparison.compare import default_minmax_scaling
 from country_comparison.plots.plot_rankings import plot_rankings_hor, highlight_buddie
-from country_comparison.reads.read_config import read_config, update_config_from_slider
+from country_comparison.reads.read_config import read_config, update_config_from_form
 from country_comparison.search_a_buddie import search_a_buddie
 from definitions import get_root
 
@@ -15,7 +15,7 @@ if __name__ == "__main__":
     res_arr = np.zeros((df.shape[0], 1))
 
     config['root'] = get_root()
-    config = update_config_from_slider(config)
+    config = update_config_from_form(config, df)
 
     for feature in config['features_to_use']:
         clips = {}
