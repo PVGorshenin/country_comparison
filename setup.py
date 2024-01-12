@@ -8,7 +8,7 @@ setuptools.setup(
     name="country_comparison",
     version=__version__,
     packages=setuptools.find_packages(),
-    python_requires="<3.9.0",
+    python_requires="<3.10.0",
     install_requires=[
         "matplotlib==3.5.1",
         "numpy==1.21.5",
