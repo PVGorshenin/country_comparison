@@ -4,22 +4,22 @@ country_to_highlight: Russian Federation
 is_buddie_highlight: True
 
 feature_weights:
-  gdp_ppp: .5
-  homicide_rate: -0.7
-  suicide_rate: -0.7
-  purchasing_power_numbeo: .6
-  property_price_to_income_numbeo: -0.4
-  safety_numbeo: .7
-  health_care_numbeo: .8
-  traffic_commute_time_numbeo: -0.4
-  pollution_numbeo: -0.4
   climate_numbeo: .4
-  life_expectancy: 1
-  happiness: .8
-  unesco_objects: .5
   distance_to_30_years: -0.5
+  gdp_ppp: .5
   gini: -0.5
+  happiness: .8
+  health_care_numbeo: .8
+  homicide_rate: -0.7
   incarceration_rate: -0.6
+  life_expectancy: 1
+  pollution_numbeo: -0.4
+  property_price_to_income_numbeo: -0.4
+  purchasing_power_numbeo: .6
+  safety_numbeo: .7
+  suicide_rate: -0.7
+  traffic_commute_time_numbeo: -0.4
+  unesco_objects: .5
 
 feature_clips:
   gdp_ppp:
