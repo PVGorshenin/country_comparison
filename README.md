@@ -35,7 +35,33 @@
 
 <summary> Сумбурная критика показателей  </summary> 
 
-Numbeo отличный бейзлайн, но у него есть следующие недостатки
+**Numbeo** отличный бейзлайн, но у него есть следующие недостатки
+
+**Сбор данных numbeo:**
+
+> Numbeo archives the values of its old data for historical purposes.
+> By default, data older than 12 months is removed, but for popular cities,
+> this time frame can be reduced to 3 months. If fresh data are not available,
+> Numbeo may use data up to 18 months old, but only if our indicators suggest that inflation is low in that country. 
+
+Дата актуальности в 1 год это хорошо, но хотелось бы посмотреть на то, как определяются популярные города. Пороги
+скрыты, поэтому не понятно насколько это всё костыльно.
+Они обмолвились об инфляции, но не понятно это внутренняя или долларовая. Я замечал, что колебания курса очень сильно
+влияют на финальный скор.
+- как они усредняют инфляцию по году?
+- наблюдения, ближе к текущему дню, более весомые или просто берём среднее?
+
+**Страновой индекс numbeo**
+
+>To compile data for a country, we utilize all the entries (from all cities) to calculate average
+> data for that country. It should be noted that this is different process than
+> from calculating aggregated data for all cities in the country.
+> Therefore, in calculating country-level data, we weigh each city by the number of contributors.
+> As there are usually more inputs for a country than for a city, 
+> the aggregate data shown at a country level generally consists of more data points. 
+ 
+Скор страны это взвешенная сумма городов. Но ведь у стран разный уровень урбанизации. 
+Деревенских опять забыли?
 
 `Numbeo purchasing power index` - не учитывает количество бесплатных или условно бесплатных благ. Например,
 оплата садика в РФ и Нидерландах отличается раз в 20. Высшее образование тоже мегатрата в некоторых странах. 
