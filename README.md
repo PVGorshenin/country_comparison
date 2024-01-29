@@ -1,75 +1,45 @@
 # country-comparison
 
-### The goal.
+### Таблица источников
 
-What the metric we will choose such a place we will take).
+| Показытель         | Год актуальности | Источник                                                                                                                       |
+|--------------------|------------------|--------------------------------------------------------------------------------------------------------------------------------|
+| gdp ppp            | 2024 start-year  | https://www.imf.org/external/datamapper/PPPPC@WEO/OEMDC/ADVEC/WEOWORLD                                                         |
+| homicide rate      | 2018             | https://dataunodc.un.org/content/homicide-rate-option-2                                                                        |
+| numbeo             | 2023 mid-year    | https://www.numbeo.com/quality-of-life/rankings_by_country.jsp                                                                 |
+| suicide rate       | 2019             | https://apps.who.int/gho/data/node.main.MHSUICIDEASDR?lang=en                                                                  |
+| life expectancy    | 2020 end-year    | https://apps.who.int/gho/data/node.main.688                                                                                    |
+| happiness index    | 2021             | https://worldhappiness.report/ed/2021/#appendices-and-data                                                                     |
+| unesco objects     | 2023             | https://en.wikipedia.org/wiki/World_Heritage_Sites_by_country                                                                  |
+| median age         | 2022             | https://population.un.org/wpp/Download/Files/1_Indicators%20(Standard)/EXCEL_FILES/1_Population/WPP2019_POP_F05_MEDIAN_AGE.xlsx |
+| gini               | 2022             | https://data.worldbank.org/indicator/SI.POV.GINI/                                                                              |
+| incarceration rate | 2023 mid-year    | https://www.prisonstudies.org/highest-to-lowest/prison_population_rate?field_region_taxonomy_tid=All                           |
 
-I like to compare countries. But I haven't succeeded in finding a fair and
-comprehensive rating. 
-So I have made my own. Just for fun. 
 
-This repo is an attempt to unite different statistics(features)
-in one score. To achieve user-specific results one could regulate the weight of the 
-parameter by changing it in the config. 
 
-I chose features for my taste. I didn't use those which look suspicious to me. 
-Or just gave them lower coefficients. 
+### Сбор данных
 
-Further explanations about features you can find in **feature_explanation branch**
+В качестве базового набора стран использован набор из numbeo. Набор стран разнится между источниками, 
+но мэтчинг редких стран и разных написаний одной страны слишком трудоёмкий.
 
-### To check the app
+Сбор данных происходит в полурочном режиме внутри ветки
+[making_data](https://github.com/PVGorshenin/country_comparison/tree/making_data)
+Многие показатели выкладываются в виде excel-файлов. Поэтому труд на автоматизацию не факт, что окупится.
+Внутри `making_data` [парсится](https://github.com/PVGorshenin/country_comparison/tree/making_data/get_data/parse), что доступно парсингу.
+Excel файлы пинаются костылём в `data/input/<year>`.
 
-[Visit](https://share.streamlit.io/pvgorshenin/country_comparison/streamlit/main.py)
+Далее файлы обрабатываются ноутбуками 
+[здесь](https://github.com/PVGorshenin/country_comparison/tree/making_data/notebook).
+Финальный результат, сметчинных показателей хранится 
+[здесь](https://github.com/PVGorshenin/country_comparison/blob/making_data/data/result/mega_table.csv). 
+В main этот файл попадает без мёрджа через checkout из making_data.
 
-### To run locally
 
-The whole project has been made in python. It uses **streamlit** for the user interface. To run
-type the command
-`pip install -e .`
 
-and run
+### Текущие показатели
 
-`streamlit run main.py`
-
-The web interface will start to be available at `localhost:8501`
-
-The config file is placed in config.yaml. There you can specify default weights for the features.
-It could be updated later with the web form. 
-
-You should specify the output folder with `res_filepath` in the config. 
-
-I placed the script's input data in `match_table_filepath` in the config. Right now it 
-`data/result/mega_table.csv` 
-
-### Data
-
-Data sources are placed in `source_lst.csv`. As the basic set of countries, I chose the one from the
-numbeo. It covers my needs, and it makes matching different sources easier.
-
-I chose not to make automatic scrapping and matching. Sources are pretty diverse in naming, and it is
-just faster to make a manual matching. 
-Data cleaning and matching could be found in the `making_data` branch.
-
-### Methodology
-
-Each feature is mapped to a `[0, 100]` interval by MinMax scaling. Next, they summed up after multiplying
-with **weights** from the user's input. Actually, in the streamlit
-interface, I have made `[0, 10]` interval available because of the usability of sliders. 
-But under the hood, it is still `[0, 1]`. Obtained results are passed to the MinMax scaling once again to get
-the final score.
-
-If the feature contains **outliers** you can specify left and right quantile for clipping an input. 
-
-### Currently available features
-
-`gdp_ppp, homicide_rate, suicide_rate, purchasing_power_numbeo, property_price_to_income_numbeo,
+`
+gdp_ppp, homicide_rate, suicide_rate, purchasing_power_numbeo, property_price_to_income_numbeo,
 safety_numbeo, health_care_numbeo, traffic_commute_time_numbeo, pollution_numbeo, climate_numbeo, 
-life_expectancy, happiness, unesco_objects, distance_to_30_years`
+life_expectancy, happiness, unesco_objects, distance_to_30_years, gini, incarceration_rate`
 
-### Search a buddie
-
-The algorithm shows the closest country in euclidian space to the input one
-(`config[country_to_highlight]`). 
-Points in the space are  features received after the run. You can consider it the closest country to 
-the input one in your preference's space.
-To turn in(off) change `is_buddie_highlight` variable in the config.
