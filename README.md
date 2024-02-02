@@ -90,7 +90,7 @@
 
 ### Ссылка для ознакомления
 
-[Visit]([https://share.streamlit.io/pvgorshenin/country_comparison/main/main.py](https://pvgorshenin-country-comparison-main-ri29h5.streamlit.app/))
+[Visit](https://pvgorshenin-country-comparison-main-ri29h5.streamlit.app)
 
 
 ### Сбор данных
