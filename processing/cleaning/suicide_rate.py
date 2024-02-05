@@ -19,7 +19,9 @@ def remove_confidence_interval(complex_val):
     return complex_val.split(' ')[0]
 
 for year_col in range(2000, 2020):
-    suicide_df[str(year_col)] = suicide_df[str(year_col)].map(lambda z: remove_confidence_interval(z)).astype(float)
+    suicide_df[str(year_col)] = suicide_df[str(year_col)].map(
+        lambda z: remove_confidence_interval(z)
+    ).astype(float)
 
 suicide_df.rename({'Country': 'country'}, axis=1, inplace=True)
 
