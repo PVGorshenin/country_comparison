@@ -4,12 +4,12 @@
 
 | Показытель         | Год актуальности | Источник                                                                                                                       |
 |--------------------|------------------|--------------------------------------------------------------------------------------------------------------------------------|
-| gdp ppp_per_cap    | 2024 start-year  | https://www.imf.org/external/datamapper/PPPPC@WEO/OEMDC/ADVEC/WEOWORLD                                                         |
+| gdp ppp_per_cap    | 2023             | https://www.imf.org/external/datamapper/PPPPC@WEO/OEMDC/ADVEC/WEOWORLD                                                         |
 | homicide rate      | 2018             | https://dataunodc.un.org/content/homicide-rate-option-2                                                                        |
 | numbeo             | 2023 mid-year    | https://www.numbeo.com/quality-of-life/rankings_by_country.jsp                                                                 |
 | suicide rate       | 2019             | https://apps.who.int/gho/data/node.main.MHSUICIDEASDR?lang=en                                                                  |
 | life expectancy    | 2019             | https://apps.who.int/gho/data/node.main.688                                                                                    |
-| happiness index    | 2021             | https://worldhappiness.report/ed/2023/#appendices-and-data                                                                     |
+| happiness index    | 2022             | https://worldhappiness.report/ed/2023/#appendices-and-data                                                                     |
 | unesco objects     | 2023             | https://en.wikipedia.org/wiki/World_Heritage_Sites_by_country                                                                  |
 | median age         | 2022             | https://population.un.org/wpp/Download/Files/1_Indicators%20(Standard)/EXCEL_FILES/1_Population/WPP2019_POP_F05_MEDIAN_AGE.xlsx |
 | gini               | 2022             | https://data.worldbank.org/indicator/SI.POV.GINI/                                                                              |
@@ -22,14 +22,14 @@
 В качестве базового набора стран использован набор из numbeo. Набор стран разнится между источниками, 
 но мэтчинг редких стран и разных написаний одной страны слишком трудоёмкий.
 
-Сбор данных происходит в полурочном режиме внутри ветки
+Сбор данных происходит в полуручном режиме внутри ветки
 [making_data](https://github.com/PVGorshenin/country_comparison/tree/making_data)
 Многие показатели выкладываются в виде excel-файлов. Поэтому труд на автоматизацию не факт, что окупится.
 Внутри `making_data` [парсится](https://github.com/PVGorshenin/country_comparison/tree/making_data/get_data/parse), что доступно парсингу.
 Excel файлы пинаются костылём в `data/input/<year>`.
 
 Далее файлы обрабатываются ноутбуками 
-[здесь](https://github.com/PVGorshenin/country_comparison/tree/making_data/notebook).
+[здесь](https://github.com/PVGorshenin/country_comparison/tree/making_data/processing).
 Финальный результат, сметчинных показателей хранится 
 [здесь](https://github.com/PVGorshenin/country_comparison/blob/making_data/data/result/mega_table.csv). 
 В main этот файл попадает без мёрджа через checkout из making_data.
@@ -88,7 +88,12 @@ and may not be the same as official national estimates.
 Due to changes in input data and methods, GHE2015 are not comparable to previously published WHO estimates. 
 </details>
 
-`life expectancy` - устаревший, доковидный. Данные взяты из итерации 2022 года без изменений.
+`life expectancy` - оставил данные за 2019 год. Провайдеров данных много, есть и более поздние данные, но влияние Covid
+очень существенное. Восстановление ОПЖ увидим в 2023 году, поэтому брать 2022 и, тем более 2021, смысла пока нет. Данные
+ВОЗ основываются на статистике, предоставляемой странами-участницами программы VR (Vital Registration). Это 77 стран, 
+что вполне достаточно для целей данного проекта. Для стран-участниц VR всё же делается оценки корректировки для старшего 
+поколения из-за неполноты информации в данной группе. Но не думаю, что эти оценки могут существенно сдвинуть показатели.
+Для стран вне VR данные делаются оценочно. 
 
 `happiness index` - результаты отчёта 2023 года получены усреднением за 3 последних года (2020 - 2023),
 хотя данные по отдельным годам также присутствуют. При этом данные за последние 3 года есть далеко не у всех стран.
@@ -102,7 +107,6 @@ Due to changes in input data and methods, GHE2015 are not comparable to previous
 Индекс коррупции тоже максимально странный. Таджикистан на 17 месте между Австрией и Бельгией.
 
 
-
 ### Работа с файлами показателей
 
 `gdp_ppp_per_cap` - файлик в формате xls. Для чтения через pandas нужно удалить пустую строку после хэдера. 
@@ -113,6 +117,8 @@ Due to changes in input data and methods, GHE2015 are not comparable to previous
 `suicide_rate` - лёгкий парсинг.
 
 `happiness index` - лёгкий парсинг.
+
+`life expectancy`
 
 
 
