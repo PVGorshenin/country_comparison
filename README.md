@@ -2,7 +2,7 @@
 
 ### Таблица источников
 
-| Показытель         | Год актуальности | Источник                                                                                                                       |
+| Показатель         | Год актуальности | Источник                                                                                                                       |
 |--------------------|------------------|--------------------------------------------------------------------------------------------------------------------------------|
 | gdp ppp_per_cap    | 2023             | https://www.imf.org/external/datamapper/PPPPC@WEO/OEMDC/ADVEC/WEOWORLD                                                         |
 | homicide rate      | 2018             | https://dataunodc.un.org/content/homicide-rate-option-2                                                                        |
@@ -12,7 +12,7 @@
 | happiness index    | 2022             | https://worldhappiness.report/ed/2023/#appendices-and-data                                                                     |
 | unesco objects     | 2023             | https://en.wikipedia.org/wiki/World_Heritage_Sites_by_country                                                                  |
 | median age         | 2022             | https://population.un.org/wpp/Download/Files/1_Indicators%20(Standard)/EXCEL_FILES/1_Population/WPP2019_POP_F05_MEDIAN_AGE.xlsx |
-| gini               | 2022             | https://data.worldbank.org/indicator/SI.POV.GINI/                                                                              |
+| gini               | 2020 - частично  | https://data.worldbank.org/indicator/SI.POV.GINI/                                                                              |
 | incarceration rate | 2023 mid-year    | https://www.prisonstudies.org/highest-to-lowest/prison_population_rate?field_region_taxonomy_tid=All                           |
 
 
@@ -114,19 +114,15 @@ Due to changes in input data and methods, GHE2015 are not comparable to previous
 показателей фертильности, смертности, миграции UN использует переписи, опросы и статистику VR (Vital Registration).
 Для медианного возраста методолгию найти не удалось 
 
+`gini` - очень не полный. за 22 год всего 7 наблюдений. Заполняю предыдущими значениями. Зато, в отличии от данных,
+у World Bank хорошее [описание методологии](https://databank.worldbank.org/metadataglossary/gender-statistics/series/SI.POV.GINI).
+Источником данных служат национальные статистические агенста и собственные опросы World Bank. Для развитых стран 
+используется `Luxembourg Income Study database`. Огранчения индекса хорошо описаны на страничке с методологией.
 
 ### Работа с файлами показателей
 
 `gdp_ppp_per_cap` - файлик в формате xls. Для чтения через pandas нужно удалить пустую строку после хэдера. 
 В файле страны/регионы даны вперемешку.
-
-`homicide_rate` - лёгкий парсинг.
-
-`suicide_rate` - лёгкий парсинг.
-
-`happiness index` - лёгкий парсинг.
-
-`life expectancy` - лёгкий парсинг
 
 
 
