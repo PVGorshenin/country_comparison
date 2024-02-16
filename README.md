@@ -12,8 +12,10 @@
 | happiness index    | 2022             | https://worldhappiness.report/ed/2023/#appendices-and-data                                                                     |
 | unesco objects     | 2023             | https://en.wikipedia.org/wiki/World_Heritage_Sites_by_country                                                                  |
 | median age         | 2022             | https://population.un.org/wpp/Download/Files/1_Indicators%20(Standard)/EXCEL_FILES/1_Population/WPP2019_POP_F05_MEDIAN_AGE.xlsx |
-| gini               | 2020 - частично  | https://data.worldbank.org/indicator/SI.POV.GINI/                                                                              |
+| gini               | 2022 - частично  | https://data.worldbank.org/indicator/SI.POV.GINI/                                                                              |
 | incarceration rate | 2023 mid-year    | https://www.prisonstudies.org/highest-to-lowest/prison_population_rate?field_region_taxonomy_tid=All                           |
+| gender_gap         | 2021             | https://en.wikipedia.org/wiki/Global_Gender_Gap_Report                                                                                                                     |
+| press_freedom      | 2023             | https://rsf.org/en/index?year=2023                                                                                                                              |
 
 
 
@@ -21,6 +23,8 @@
 
 В качестве базового набора стран использован набор из numbeo. Набор стран разнится между источниками, 
 но мэтчинг редких стран и разных написаний одной страны слишком трудоёмкий.
+
+В качестве источников стараюсь использовать первоисточники. 
 
 Сбор данных происходит в полуручном режиме внутри ветки
 [making_data](https://github.com/PVGorshenin/country_comparison/tree/making_data)
@@ -118,6 +122,13 @@ Due to changes in input data and methods, GHE2015 are not comparable to previous
 у World Bank хорошее [описание методологии](https://databank.worldbank.org/metadataglossary/gender-statistics/series/SI.POV.GINI).
 Источником данных служат национальные статистические агенста и собственные опросы World Bank. Для развитых стран 
 используется `Luxembourg Income Study database`. Огранчения индекса хорошо описаны на страничке с методологией.
+
+`incarceration rate` - аккумулируется организацией World Prison Brief. Хостят базу ребята на серверах 
+Birkbeck, University of London, степень аффиляци не понятна. Данные собираются с
+> largely derived from governmental or other official sources
+
+`gender_gap` - есть и более поздние годы, но уже без РФ - поэтому использую 2021. Сам отчёт в pdf, поэтому приходится
+парсить wiki.
 
 ### Работа с файлами показателей
 
