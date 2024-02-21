@@ -5,6 +5,8 @@ inp_filepath = '../../data/input/2022/suicide_rate.csv'
 res_filepath = '../../data/intermediate/2023/suicide_cleaned'
 
 suicide_df = pd.read_csv(inp_filepath)
+last_year_of_observation = '2019'
+res_colname = 'suicide_rate'
 
 def exclude_header(sui_df):
     sui_df.columns = sui_df.iloc[0].values
@@ -23,6 +25,9 @@ for year_col in range(2000, 2020):
         lambda z: remove_confidence_interval(z)
     ).astype(float)
 
-suicide_df.rename({'Country': 'country'}, axis=1, inplace=True)
+suicide_df.rename({
+    'Country': 'country',
+    last_year_of_observation: res_colname
+}, axis=1, inplace=True)
 
-suicide_df[['country', '2019']].to_csv(res_filepath, index=None)
+suicide_df[['country', res_colname]].to_csv(res_filepath, index=None)

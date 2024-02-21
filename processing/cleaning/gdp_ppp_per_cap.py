@@ -3,6 +3,7 @@ import pandas as pd
 
 last_year_of_observation = 2023
 last_row_of_country_data = 196
+res_colname = 'gdp_ppp'
 
 input_filepath = '../../data/input/2023/imf-dm-export-20231214.xls'
 res_filepath = '../../data/intermediate/2023/gdp_per_capita_cleaned.csv'
@@ -23,7 +24,11 @@ gdp_df = gdp_df.iloc[:last_row_of_country_data]
 
 gdp_df['country'] = gdp_df['country'].map(lambda z: z.split(',')[0])
 
-gdp_df[['country', last_year_of_observation]].dropna().to_csv(
+gdp_df.rename(columns={
+    last_year_of_observation: res_colname
+}, inplace=True)
+
+gdp_df[['country', res_colname]].dropna().to_csv(
     res_filepath,
     index=None
 )

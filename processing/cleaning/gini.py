@@ -10,7 +10,7 @@ last_year_of_observation = 2022
 gini_df['gini'] = gini_df[str(last_year_of_observation)].values
 
 def fill_nans(gini_df, last_year_of_observation):
-    n_years_to_go_past = 9
+    n_years_to_go_past = 10
     for i_shift in range(1, n_years_to_go_past+1):
         is_now_null = gini_df['gini'].isnull()
         gini_df.loc[is_now_null, 'gini'] = gini_df.loc[is_now_null, str(last_year_of_observation-i_shift)].values
@@ -24,7 +24,6 @@ gini_df.rename(
     axis=1,
     inplace=True
 )
-
 
 gini_df.loc[~gini_df['gini'].isnull(), ['country', 'gini']].to_csv(output_filepath, index=None)
 
