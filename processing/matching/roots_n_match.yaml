@@ -1,0 +1,36 @@
+country_name_roots: [
+    'Bosnia',
+    'Czech',
+    'Egypt',
+    'Georgia',
+    'Iran',
+    'Ireland',
+    'Korea',
+    'Macedonia',
+    'Morocco',
+    'Russi',
+    'Slovak',
+    'Viet',
+    'Venez',
+    'United Kingdom',
+    'United States'
+]
+
+countries_w_comlicated_naming:
+    'Cyprus': ['Cyprus (Republic of)']
+    'Ireland': [
+        'Ireland, Republic of',
+        'Republic of Ireland'
+    ]
+    'South Korea': [
+        'Republic of Korea',
+        'Republic of (South) Korea',
+        'Korea, Rep.',
+        'Korea'
+    ]
+    'Turkey': ['Turkiye', 'Türkiye']
+    'United States': ['United States of America']
+    'United Kingdom': [
+        'United Kingdom of Great Britain and Northern Ireland',
+        'United Kingdom: England & Wales'
+    ]

@@ -5,7 +5,7 @@ from bs4 import BeautifulSoup
 from tqdm import tqdm
 
 url = 'https://en.wikipedia.org/wiki/World_Heritage_Sites_by_country'
-output_filepath = 'data/intermediate/2023/unesco.csv'
+output_filepath = '../../data/intermediate/2023/unesco.csv'
 
 r = requests.get(url)
 
@@ -33,4 +33,6 @@ for country in tqdm(countries[1:-2]):
 
 unesco_df = pd.DataFrame(country_dct)
 
-unesco_df.to_csv(output_filepath, index=None)
+unesco_df.loc[unesco_df.shape[0]+1] = ['Kuwait', 0]
+
+unesco_df.to_csv(output_filepath, index=False)

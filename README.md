@@ -122,10 +122,14 @@ Due to changes in input data and methods, GHE2015 are not comparable to previous
 у World Bank хорошее [описание методологии](https://databank.worldbank.org/metadataglossary/gender-statistics/series/SI.POV.GINI).
 Источником данных служат национальные статистические агенста и собственные опросы World Bank. Для развитых стран 
 используется `Luxembourg Income Study database`. Огранчения индекса хорошо описаны на страничке с методологией.
+Пустые значения добираются из прошлых лет и со сторонних сайтов: WB не единственный источник.
 
 `incarceration rate` - аккумулируется организацией World Prison Brief. Хостят базу ребята на серверах 
 Birkbeck, University of London, степень аффиляци не понятна. Данные собираются с
 > largely derived from governmental or other official sources
+
+Файл разбивает UK на несколько субъектов и Боснию и Герцеговину. Заменяю взвешенной суммой по регионам, иначе 
+метчинг плохо проходит
 
 `gender_gap` - составитель Всемирный Экономический Форум. Есть и более поздние годы, но уже без РФ - 
 поэтому использую 2021. Сам отчёт в pdf, поэтому приходится парсить wiki. 
