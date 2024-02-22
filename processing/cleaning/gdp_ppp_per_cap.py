@@ -28,6 +28,14 @@ gdp_df.rename(columns={
     last_year_of_observation: res_colname
 }, inplace=True)
 
+gdp_df = gdp_df[['country', res_colname]]
+gdp_df.reset_index(drop=True, inplace=True)
+
+# earlier years
+gdp_df.loc[gdp_df.shape[0]+1] = ['Sri Lanka', 14267.2]
+gdp_df.loc[gdp_df.shape[0]+1] = ['Lebanon', 11793.8]
+
+
 gdp_df[['country', res_colname]].dropna().to_csv(
     res_filepath,
     index=None
