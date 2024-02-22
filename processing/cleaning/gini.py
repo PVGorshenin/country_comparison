@@ -25,5 +25,25 @@ gini_df.rename(
     inplace=True
 )
 
+# old from file
+gini_df.loc[gini_df['country']=='Venezuela, RB', 'gini'] = 44.8
+gini_df.loc[gini_df['country']=='Lebanon', 'gini'] = 31.8
+
+#source worldpopulationreview.com
+
+gini_df.loc[gini_df['country']=='Bosnia and Herzegovina', 'gini'] = 33
+gini_df.loc[gini_df['country']=='Jordan', 'gini'] = 33.7
+gini_df.loc[gini_df['country']=='New Zealand', 'gini'] = 36.2
+gini_df.loc[gini_df['country']=='Qatar', 'gini'] = 41.1
+gini_df.loc[gini_df['country']=='Singapore', 'gini'] = 45.9
+gini_df.loc[gini_df['country']=='Saudi Arabia', 'gini'] = 45.9
+
+#source www.worldeconomics.com
+gini_df.loc[gini_df['country']=='Azerbaijan', 'gini'] = 38.2
+
+gini_df.loc[gini_df['country']=='Kuwait', 'gini'] = 50 #no info for kuwait, high value is a penalty for a closeness
+gini_df.loc[gini_df['country']=='Oman', 'gini'] = 41.1 #tradingeconomics
+
+
 gini_df.loc[~gini_df['gini'].isnull(), ['country', 'gini']].to_csv(output_filepath, index=None)
 
