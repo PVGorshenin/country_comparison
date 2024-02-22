@@ -40,6 +40,42 @@ prison_df = prison_df[is_data_exist]
 
 prison_df['incarceration_rate'] = prison_df['incarceration_rate'].astype(int)
 
+def treat_uk(prison_df):
+
+    uk_mean_stat =\
+        0.89 * prison_df.loc[prison_df['country']=='United Kingdom: England & Wales', 'incarceration_rate'].values +\
+        0.09 * prison_df.loc[prison_df['country']=='United Kingdom: Northern Ireland', 'incarceration_rate'].values + \
+        0.02 * prison_df.loc[prison_df['country']=='United Kingdom: Scotland', 'incarceration_rate'].values
+
+    uk_regions_mask = prison_df['country'].map(lambda z: 'United Kingdom' in z)
+    prison_df = prison_df[~uk_regions_mask]
+
+    prison_df.reset_index(drop=True, inplace=True)
+
+    prison_df.loc[prison_df.shape[0]+1] = ['United Kingdom', int(uk_mean_stat[0])]
+    return prison_df
+
+
+def treat_bosnia(prison_df):
+
+    bosnia_mean_stat = \
+            0.62 * prison_df.loc[prison_df['country']=='Bosnia and Herzegovina: Federation', 'incarceration_rate'].values +\
+            0.38 * prison_df.loc[prison_df['country']=='Bosnia and Herzegovina: Republika Srpska', 'incarceration_rate'].values
+
+    bosnia_regions_mask = prison_df['country'].map(lambda z: 'Bosnia' in z)
+    prison_df = prison_df[~bosnia_regions_mask]
+
+    prison_df.reset_index(drop=True, inplace=True)
+
+    prison_df.loc[prison_df.shape[0]+1] = ['Bosnia and Herzegovina', int(bosnia_mean_stat[0])]
+
+    return prison_df
+
+
+prison_df = treat_uk(prison_df)
+prison_df = treat_bosnia(prison_df)
+
+
 print(prison_df['incarceration_rate'].isnull().sum())
 
-prison_df.to_csv(output_filepath, index=False)
+prison_df.sort_values(by='country').to_csv(output_filepath, index=False)
