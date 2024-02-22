@@ -11,5 +11,7 @@ press_df.rename(columns={
     'Score': 'press_freedom'
 }, inplace=True)
 
+press_df['press_freedom'] = press_df['press_freedom'].map(lambda z: z.replace(',', '.'))
+press_df['press_freedom'] = press_df['press_freedom'].astype(float)
 
 press_df[['country', 'press_freedom']].to_csv(res_filepath, index=False)

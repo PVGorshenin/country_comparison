@@ -105,6 +105,8 @@ not_enough_indicators = ['Hong Kong (China)', 'Taiwan']
 not_enough_indicators_mask = numbeo_df['country'].map(lambda z: z in not_enough_indicators)
 numbeo_df = numbeo_df[~not_enough_indicators_mask]
 
+for col in numbeo_df.columns[1:]:
+    numbeo_df[col] = numbeo_df[col].astype(float)
 
 numbeo_df.to_csv(res_filepath, index=None)
 

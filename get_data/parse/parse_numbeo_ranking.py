@@ -1,11 +1,10 @@
-import os
 import pandas as pd
 import requests
 
 from bs4 import BeautifulSoup
 
 url = 'https://www.numbeo.com/quality-of-life/rankings_by_country.jsp'
-output_filepath = 'data/intermediate/2023/numbeo.csv'
+output_filepath = '../../data/intermediate/2023/numbeo.csv'
 
 r = requests.get(url)
 
