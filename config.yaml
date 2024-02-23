@@ -1,24 +1,26 @@
-match_table_filepath: data/result/mega_table.csv
+match_table_filepath: data/result/2023/all_indicators.csv
 res_filepath: data/result/final_standings.csv
 country_to_highlight: Russian Federation
 is_buddie_highlight: True
 
 feature_weights:
-  climate_numbeo: .4
   distance_to_30_years: -0.5
   gdp_ppp: .5
   gini: -0.5
+  gender_equality_score: .7
   happiness: .8
-  health_care_numbeo: .8
   homicide_rate: -0.7
   incarceration_rate: -0.6
   life_expectancy: 1
-  pollution_numbeo: -0.4
-  property_price_to_income_numbeo: -0.4
-  purchasing_power_numbeo: .6
-  safety_numbeo: .7
+  numbeo_climate_index: .4
+  numbeo_health_care_index: .8
+  numbeo_pollution_index: -0.4
+  numbeo_property_price_to_income_ratio: -0.4
+  numbeo_purchasing_power_index: .6
+  numbeo_safety_index: .7
+  numbeo_traffic_commute_time_index: -0.4
+  press_freedom: -0.7
   suicide_rate: -0.7
-  traffic_commute_time_numbeo: -0.4
   unesco_objects: .5
 
 feature_clips:
@@ -32,8 +34,23 @@ feature_clips:
     left_quantile_clip: .01
     right_quantile_clip: .98
 
-features_to_use: [gdp_ppp, homicide_rate, suicide_rate, purchasing_power_numbeo,
-                  property_price_to_income_numbeo, safety_numbeo, health_care_numbeo,
-                  traffic_commute_time_numbeo, pollution_numbeo, climate_numbeo,
-                  life_expectancy, happiness, unesco_objects, distance_to_30_years,
-                  gini, incarceration_rate]
+features_to_use: [
+  distance_to_30_years,
+  gdp_ppp,
+  gini,
+  gender_equality_score,
+  happiness,
+  homicide_rate,
+  incarceration_rate,
+  life_expectancy,
+  numbeo_climate_index,
+  numbeo_health_care_index,
+  numbeo_purchasing_power_index,
+  numbeo_pollution_index,
+  numbeo_property_price_to_income_ratio,
+  numbeo_safety_index,
+  numbeo_traffic_commute_time_index,
+  press_freedom,
+  suicide_rate,
+  unesco_objects
+]
