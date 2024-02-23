@@ -8,7 +8,7 @@ setuptools.setup(
     name="country_comparison",
     version=__version__,
     packages=setuptools.find_packages(),
-    python_requires="<3.9.0",
+    python_requires="<3.11.0",
     install_requires=[
         "matplotlib==3.5.1",
         "numpy==1.21.5",
@@ -16,6 +16,6 @@ setuptools.setup(
         "pyyaml==6.0",
         "pytest==6.2.5",
         "scikit-learn==1.0.2",
-        "streamlit==1.5.0"
+        "streamlit==1.22.0"
     ],
 )
