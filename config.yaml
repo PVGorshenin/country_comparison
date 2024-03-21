@@ -4,6 +4,7 @@ country_to_highlight: Russian Federation
 is_buddie_highlight: True
 
 feature_weights:
+  air_quality: -1
   distance_to_30_years: -0.5
   gdp_ppp: .5
   gini: -0.5
@@ -14,6 +15,7 @@ feature_weights:
   life_expectancy: 1
   numbeo_climate_index: .4
   numbeo_health_care_index: .8
+  numbeo_kindergarden_price: -1
   numbeo_pollution_index: -0.4
   numbeo_property_price_to_income_ratio: -0.4
   numbeo_purchasing_power_index: .6
@@ -35,6 +37,7 @@ feature_clips:
     right_quantile_clip: .98
 
 features_to_use: [
+  air_quality,
   distance_to_30_years,
   gdp_ppp,
   gini,
@@ -45,6 +48,7 @@ features_to_use: [
   life_expectancy,
   numbeo_climate_index,
   numbeo_health_care_index,
+  numbeo_kindergarden_price,
   numbeo_purchasing_power_index,
   numbeo_pollution_index,
   numbeo_property_price_to_income_ratio,
