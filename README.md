@@ -14,20 +14,27 @@
 
 <summary> Таблица источников</summary>
 
-| Показатель         | Год актуальности | Источник                                                                                                                       |
-|--------------------|------------------|--------------------------------------------------------------------------------------------------------------------------------|
-| gdp ppp_per_cap    | 2023             | https://www.imf.org/external/datamapper/PPPPC@WEO/OEMDC/ADVEC/WEOWORLD                                                         |
-| homicide rate      | 2018             | https://dataunodc.un.org/content/homicide-rate-option-2                                                                        |
-| numbeo             | 2023 mid-year    | https://www.numbeo.com/quality-of-life/rankings_by_country.jsp                                                                 |
-| suicide rate       | 2019             | https://apps.who.int/gho/data/node.main.MHSUICIDEASDR?lang=en                                                                  |
-| life expectancy    | 2019             | https://apps.who.int/gho/data/node.main.688                                                                                    |
-| happiness index    | 2022             | https://worldhappiness.report/ed/2023/#appendices-and-data                                                                     |
-| unesco objects     | 2023             | https://en.wikipedia.org/wiki/World_Heritage_Sites_by_country                                                                  |
+| Показатель         | Год актуальности | Источник                                                                                                                        |
+|--------------------|------------------|---------------------------------------------------------------------------------------------------------------------------------|
+| gdp ppp_per_cap    | 2023             | https://www.imf.org/external/datamapper/PPPPC@WEO/OEMDC/ADVEC/WEOWORLD                                                          |
+| homicide rate      | 2018             | https://dataunodc.un.org/content/homicide-rate-option-2                                                                         |
+| numbeo             | 2023 mid-year    | https://www.numbeo.com/quality-of-life/rankings_by_country.jsp                                                                  |
+| suicide rate       | 2019             | https://apps.who.int/gho/data/node.main.MHSUICIDEASDR?lang=en                                                                   |
+| life expectancy    | 2019             | https://apps.who.int/gho/data/node.main.688                                                                                     |
+| happiness index    | 2022             | https://worldhappiness.report/ed/2023/#appendices-and-data                                                                      |
+| unesco objects     | 2023             | https://en.wikipedia.org/wiki/World_Heritage_Sites_by_country                                                                   |
 | median age         | 2022             | https://population.un.org/wpp/Download/Files/1_Indicators%20(Standard)/EXCEL_FILES/1_Population/WPP2019_POP_F05_MEDIAN_AGE.xlsx |
-| gini               | 2022 - частично  | https://data.worldbank.org/indicator/SI.POV.GINI/                                                                              |
-| incarceration rate | 2023 mid-year    | https://www.prisonstudies.org/highest-to-lowest/prison_population_rate?field_region_taxonomy_tid=All                           |
+| gini               | 2022 - частично  | https://data.worldbank.org/indicator/SI.POV.GINI/                                                                               |
+| incarceration rate | 2023 mid-year    | https://www.prisonstudies.org/highest-to-lowest/prison_population_rate?field_region_taxonomy_tid=All                            |
 | gender_gap         | 2021             | https://en.wikipedia.org/wiki/Global_Gender_Gap_Report                                                                          |
 | press_freedom      | 2023             | https://rsf.org/en/index?year=2023                                                                                              |
+| air_quality        | 2023             | https://www.iqair.com/ru/world-most-polluted-countries                                                                          | 
+| home_ownership     | ?                | https://en.wikipedia.org/wiki/List_of_countries_by_home_ownership_rate                                                          | 
+| numbeo_kindergarden| 2023             | https://www.numbeo.com/cost-of-living/country_price_rankings?itemId=224                                                         | 
+
+
+
+
 
 </details>
 
@@ -254,3 +261,4 @@ life_expectancy, happiness, unesco_objects, distance_to_30_years, gini, incarcer
 Исходная страна указывается в (`config[country_to_highlight]`). 
 Данный алгоритм - это попытка найти самую приближённую страну к рассматриваемой. 
 Ручка для включения - поле `is_buddie_highlight` в конфиге.
+
